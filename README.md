@@ -15,7 +15,7 @@ Need something? Talk to me. See [how priorities are decided](https://github.com/
 | 3 | [Go1 head computer troubleshooting](https://github.com/lyleantieau/deliverables/issues/7) | Cairo · Breanne | Medium | In progress | by Nov 13 · 14 days left |
 | 4 | [Reconfigurable hand gantry binding](https://github.com/lyleantieau/deliverables/issues/8) | Correll · William | High | Up next | by Nov 3 · 4 days left |
 | 5 | [Spot sensor & compute mounting](https://github.com/lyleantieau/deliverables/issues/5) | ARPG · Kali | High | Up next | by Nov 18 · 19 days left |
-| 6 | [Nutrunner PCB design](https://github.com/lyleantieau/deliverables/issues/9) | Correll | Medium | Up next | by Nov 30 · 31 days left |
+| 6 | [Nutrunner PCB design](https://github.com/lyleantieau/deliverables/issues/9) | Correll · Zack | Medium | Up next | by Nov 30 · 31 days left |
 <!-- deliverables:end -->
 
 ---
