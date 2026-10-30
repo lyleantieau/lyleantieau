@@ -6,6 +6,8 @@ Need something? Talk to me. See [how priorities are decided](https://github.com/
 <!-- deliverables:start -->
 0 in progress · 0 up next · 0 waiting on others · [full board →](https://github.com/users/lyleantieau/projects/1)
 
+**Open items by person:** Chris 0 · Alessandro 0 · Nikolaus 0 · Brad 0 · Lab-wide 0
+
 _Nothing queued right now._
 <!-- deliverables:end -->
 

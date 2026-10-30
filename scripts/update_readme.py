@@ -14,6 +14,7 @@ OWNER = "lyleantieau"
 BOARD = 1
 README = os.path.join(os.path.dirname(__file__), "..", "README.md")
 ACTIVE = ["In progress", "Up next", "Waiting on others"]  # display order
+PEOPLE = ["Chris", "Alessandro", "Nikolaus", "Brad", "Lab-wide"]  # Requested by options
 RECENT_DAYS = 30
 
 QUERY = """
@@ -119,7 +120,8 @@ def deliverables_section():
             and (i["closedAt"] is None or date(i["closedAt"][:10]) >= cutoff)]
 
     counts = " · ".join(f"{sum(i['fields']['Status'] == s for i in active)} {s.lower()}" for s in ACTIVE)
-    lines = [f"{counts} · [full board →]({url})", ""]
+    per_person = " · ".join(f"{p} {sum(i['fields'].get('Requested by') == p for i in active)}" for p in PEOPLE)
+    lines = [f"{counts} · [full board →]({url})", "", f"**Open items by person:** {per_person}", ""]
     if not active:
         return "\n".join(lines + ["_Nothing queued right now._"])
 
