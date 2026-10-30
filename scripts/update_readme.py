@@ -91,27 +91,20 @@ def short(value):
     return date(value).strftime("%b %-d") if value else "—"
 
 
-def gantt(items, today):
-    """A Mermaid timeline of active items. Items without a Target are left off."""
-    rows = []
-    for i in items:
-        f = i["fields"]
-        start, target = date(f.get("Start")), date(f.get("Target"))
-        if not target:
-            continue
-        start = start or min(today, target)
-        if start > target:
-            start = target
-        tag = {"In progress": "active, ", "Waiting on others": "crit, "}.get(f["Status"], "")
-        name = re.sub(r"[:;#]", " ", i["title"])
-        rows.append(f"    {name} :{tag}{start}, {target + datetime.timedelta(days=1)}")
-    if not rows:
-        return []
-    # GitHub shrinks the chart to the README column, so draw it narrow with big text.
-    config = ("%%{init: {'gantt': {'useWidth': 700, 'barHeight': 28, 'barGap': 6, "
-              "'fontSize': 14, 'sectionFontSize': 14, 'leftPadding': 90, 'topPadding': 30}}}%%")
-    return ["```mermaid", config, "gantt", "    dateFormat YYYY-MM-DD", "    axisFormat %b %d",
-            "    todayMarker on", "    section Deliverables", *rows, "```", ""]
+def timeline(fields, today):
+    """Start → Target plus how long is left, e.g. "Oct 30 → Nov 6 · 7 days left"."""
+    target = date(fields.get("Target"))
+    if not target:
+        return "—"
+    span = f"{short(fields['Start'])} → {short(fields['Target'])}" if fields.get("Start") else f"by {short(fields['Target'])}"
+    days = (target - today).days
+    if days < 0:
+        left = f"⚠️ {-days} day{'s' * (days != -1)} overdue"
+    elif days == 0:
+        left = "due today"
+    else:
+        left = f"{days} day{'s' * (days != 1)} left"
+    return f"{span} · {left}"
 
 
 def deliverables_section():
@@ -130,13 +123,11 @@ def deliverables_section():
     if not active:
         return "\n".join(lines + ["_Nothing queued right now._"])
 
-    lines += gantt(active, today)
-    lines += ["| # | Deliverable | For | Priority | Status | Target |", "|---|---|---|---|---|---|"]
+    lines += ["| # | Deliverable | For | Priority | Status | Timeline |", "|---|---|---|---|---|---|"]
     for n, i in enumerate(active, 1):
         f = i["fields"]
-        overdue = " ⚠️" if f.get("Target") and date(f["Target"]) < today else ""
         lines.append(f"| {n} | {link(i)} | {cell(f.get('Requested by'))} | {cell(f.get('Priority'))} "
-                     f"| {f['Status']} | {short(f.get('Target'))}{overdue} |")
+                     f"| {f['Status']} | {timeline(f, today)} |")
     if done:
         lines += ["", f"<details><summary>Done in the last {RECENT_DAYS} days ({len(done)})</summary>", "",
                   "| Deliverable | For |", "|---|---|"]
