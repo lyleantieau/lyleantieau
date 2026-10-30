@@ -7,6 +7,7 @@ Need something? Talk to me. See [how priorities are decided](https://github.com/
 0 in progress · 1 up next · 0 waiting on others · [full board →](https://github.com/users/lyleantieau/projects/1)
 
 ```mermaid
+%%{init: {'gantt': {'useWidth': 700, 'barHeight': 28, 'barGap': 6, 'fontSize': 14, 'sectionFontSize': 14, 'leftPadding': 90, 'topPadding': 30}}}%%
 gantt
     dateFormat YYYY-MM-DD
     axisFormat %b %d

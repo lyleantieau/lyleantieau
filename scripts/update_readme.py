@@ -107,7 +107,10 @@ def gantt(items, today):
         rows.append(f"    {name} :{tag}{start}, {target + datetime.timedelta(days=1)}")
     if not rows:
         return []
-    return ["```mermaid", "gantt", "    dateFormat YYYY-MM-DD", "    axisFormat %b %d",
+    # GitHub shrinks the chart to the README column, so draw it narrow with big text.
+    config = ("%%{init: {'gantt': {'useWidth': 700, 'barHeight': 28, 'barGap': 6, "
+              "'fontSize': 14, 'sectionFontSize': 14, 'leftPadding': 90, 'topPadding': 30}}}%%")
+    return ["```mermaid", config, "gantt", "    dateFormat YYYY-MM-DD", "    axisFormat %b %d",
             "    todayMarker on", "    section Deliverables", *rows, "```", ""]
 
 
