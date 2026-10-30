@@ -14,7 +14,7 @@ OWNER = "lyleantieau"
 BOARD = 1
 README = os.path.join(os.path.dirname(__file__), "..", "README.md")
 ACTIVE = ["In progress", "Up next", "Waiting on others"]  # display order
-PEOPLE = ["Chris", "Alessandro", "Nikolaus", "Brad", "Lab-wide"]  # Requested by options
+GROUPS = ["ARPG", "Cairo", "Correll", "HIRO", "Lab-wide"]  # Group field options
 RECENT_DAYS = 30
 
 QUERY = """
@@ -92,6 +92,11 @@ def short(value):
     return date(value).strftime("%b %-d") if value else "—"
 
 
+def who(fields):
+    """Group plus requester when there is one, e.g. "HIRO · @alice"."""
+    return " · ".join(v for v in (fields.get("Group"), fields.get("Requester")) if v)
+
+
 def timeline(fields, today):
     """Start → Target plus how long is left, e.g. "Oct 30 → Nov 6 · 7 days left"."""
     target = date(fields.get("Target"))
@@ -120,20 +125,20 @@ def deliverables_section():
             and (i["closedAt"] is None or date(i["closedAt"][:10]) >= cutoff)]
 
     counts = " · ".join(f"{sum(i['fields']['Status'] == s for i in active)} {s.lower()}" for s in ACTIVE)
-    per_person = " · ".join(f"{p} {sum(i['fields'].get('Requested by') == p for i in active)}" for p in PEOPLE)
-    lines = [f"{counts} · [full board →]({url})", "", f"**Open items by person:** {per_person}", ""]
+    per_group = " · ".join(f"{g} {sum(i['fields'].get('Group') == g for i in active)}" for g in GROUPS)
+    lines = [f"{counts} · [full board →]({url})", "", f"**Open items by group:** {per_group}", ""]
     if not active:
         return "\n".join(lines + ["_Nothing queued right now._"])
 
     lines += ["| # | Deliverable | For | Priority | Status | Timeline |", "|---|---|---|---|---|---|"]
     for n, i in enumerate(active, 1):
         f = i["fields"]
-        lines.append(f"| {n} | {link(i)} | {cell(f.get('Requested by'))} | {cell(f.get('Priority'))} "
+        lines.append(f"| {n} | {link(i)} | {cell(who(f))} | {cell(f.get('Priority'))} "
                      f"| {f['Status']} | {timeline(f, today)} |")
     if done:
         lines += ["", f"<details><summary>Done in the last {RECENT_DAYS} days ({len(done)})</summary>", "",
                   "| Deliverable | For |", "|---|---|"]
-        lines += [f"| {link(i)} | {cell(i['fields'].get('Requested by'))} |" for i in done]
+        lines += [f"| {link(i)} | {cell(who(i['fields']))} |" for i in done]
         lines += ["", "</details>"]
     return "\n".join(lines)
 
