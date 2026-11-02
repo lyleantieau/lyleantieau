@@ -4,9 +4,9 @@ What I'm working on for the CU Intelligent Robotics Lab, in priority order, with
 Need something? Talk to me. See [how priorities are decided](https://github.com/lyleantieau/deliverables#how-priorities-are-decided).
 
 <!-- deliverables:start -->
-5 in progress · 2 up next · 0 waiting on others · [full board →](https://github.com/users/lyleantieau/projects/1)
+5 in progress · 3 up next · 0 waiting on others · [full board →](https://github.com/users/lyleantieau/projects/1)
 
-**Open items by group:** ARPG 1 · Cairo 1 · Correll 4 · HIRO 1 · Lab-wide 0
+**Open items by group:** ARPG 1 · Cairo 1 · Correll 5 · HIRO 1 · Lab-wide 0
 
 | # | Deliverable | For | Priority | Status | Timeline |
 |---|---|---|---|---|---|
@@ -16,7 +16,8 @@ Need something? Talk to me. See [how priorities are decided](https://github.com/
 | 4 | [Spot sensor & compute mounting](https://github.com/lyleantieau/deliverables/issues/5) | ARPG · Kali | High | In progress | by Nov 18 · 16 days left |
 | 5 | [Go1 head computer troubleshooting](https://github.com/lyleantieau/deliverables/issues/7) | Cairo · Breanne | Medium | In progress | by Nov 13 · 11 days left |
 | 6 | [Tool changer 48V passthrough](https://github.com/lyleantieau/deliverables/issues/11) | Correll · Zack | Medium | Up next | by Nov 13 · 11 days left |
-| 7 | [Nutrunner PCB design](https://github.com/lyleantieau/deliverables/issues/9) | Correll · Zack | Medium | Up next | by Nov 30 · 28 days left |
+| 7 | [Nutrunner V2 PCB design](https://github.com/lyleantieau/deliverables/issues/9) | Correll · Zack | Medium | Up next | by Nov 30 · 28 days left |
+| 8 | [Nutrunner V2 build](https://github.com/lyleantieau/deliverables/issues/12) | Correll · Zack | Medium | Up next | — |
 <!-- deliverables:end -->
 
 ---
