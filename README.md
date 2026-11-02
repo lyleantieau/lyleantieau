@@ -15,8 +15,8 @@ Need something? Talk to me. See [how priorities are decided](https://github.com/
 | 3 | [Franka end effector troubleshooting](https://github.com/lyleantieau/deliverables/issues/6) | HIRO · Jay | Medium | In progress | by Nov 6 · 4 days left |
 | 4 | [Spot sensor & compute mounting](https://github.com/lyleantieau/deliverables/issues/5) | ARPG · Kali | High | In progress | by Nov 18 · 16 days left |
 | 5 | [Go1 head computer troubleshooting](https://github.com/lyleantieau/deliverables/issues/7) | Cairo · Breanne | Medium | In progress | by Nov 13 · 11 days left |
-| 6 | [Nutrunner PCB design](https://github.com/lyleantieau/deliverables/issues/9) | Correll · Zack | Medium | Up next | by Nov 30 · 28 days left |
-| 7 | [Tool changer 48V passthrough](https://github.com/lyleantieau/deliverables/issues/11) | Correll · Zack | Medium | Up next | by Nov 13 · 11 days left |
+| 6 | [Tool changer 48V passthrough](https://github.com/lyleantieau/deliverables/issues/11) | Correll · Zack | Medium | Up next | by Nov 13 · 11 days left |
+| 7 | [Nutrunner PCB design](https://github.com/lyleantieau/deliverables/issues/9) | Correll · Zack | Medium | Up next | by Nov 30 · 28 days left |
 <!-- deliverables:end -->
 
 ---
