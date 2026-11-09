@@ -10,11 +10,11 @@ Need something? Talk to me. See [how priorities are decided](https://github.com/
 
 | # | Deliverable | For | Priority | Status | Timeline |
 |---|---|---|---|---|---|
-| 1 | [Spot sensor & compute mounting](https://github.com/lyleantieau/deliverables/issues/5) | ARPG · Kali | High | In progress | by Nov 18 · 9 days left |
-| 2 | [Go1 head computer troubleshooting](https://github.com/lyleantieau/deliverables/issues/7) | Cairo · Breanne | Medium | In progress | by Nov 13 · 4 days left |
-| 3 | [TouchIQ convex mold](https://github.com/lyleantieau/deliverables/issues/13) | Correll · Artemis | Medium | Up next | by Nov 9 · due today |
-| 4 | [Tool changer 48V passthrough](https://github.com/lyleantieau/deliverables/issues/11) | Correll · Zack | Medium | Up next | by Nov 13 · 4 days left |
-| 5 | [Nutrunner V2 PCB design](https://github.com/lyleantieau/deliverables/issues/9) | Correll · Zack | Medium | Up next | by Nov 30 · 21 days left |
+| 1 | [Spot sensor & compute mounting](https://github.com/lyleantieau/deliverables/issues/5) | ARPG · Kali | High | In progress | by Nov 18 · 10 days left |
+| 2 | [Go1 head computer troubleshooting](https://github.com/lyleantieau/deliverables/issues/7) | Cairo · Breanne | Medium | In progress | by Nov 13 · 5 days left |
+| 3 | [TouchIQ convex mold](https://github.com/lyleantieau/deliverables/issues/13) | Correll · Artemis | Medium | Up next | by Nov 9 · 1 day left |
+| 4 | [Tool changer 48V passthrough](https://github.com/lyleantieau/deliverables/issues/11) | Correll · Zack | Medium | Up next | by Nov 13 · 5 days left |
+| 5 | [Nutrunner V2 PCB design](https://github.com/lyleantieau/deliverables/issues/9) | Correll · Zack | Medium | Up next | by Nov 30 · 22 days left |
 | 6 | [Nutrunner V2 build](https://github.com/lyleantieau/deliverables/issues/12) | Correll · Zack | Medium | Up next | — |
 
 <details><summary>Done in the last 30 days (3)</summary>
