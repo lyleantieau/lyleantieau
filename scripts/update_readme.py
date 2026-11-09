@@ -9,6 +9,7 @@ import os
 import re
 import sys
 import urllib.request
+from zoneinfo import ZoneInfo
 
 OWNER = "lyleantieau"
 BOARD = 1
@@ -16,6 +17,7 @@ README = os.path.join(os.path.dirname(__file__), "..", "README.md")
 ACTIVE = ["In progress", "Up next", "Waiting on others"]  # display order
 GROUPS = ["ARPG", "Cairo", "Correll", "HIRO", "Lab-wide"]  # Group field options
 RECENT_DAYS = 30
+TIMEZONE = ZoneInfo("America/Denver")  # Actions run in UTC; count days in lab time
 
 QUERY = """
 query($owner: String!, $num: Int!, $after: String) {
@@ -115,7 +117,7 @@ def timeline(fields, today):
 
 def deliverables_section():
     url, items = fetch_items()
-    today = datetime.date.today()
+    today = datetime.datetime.now(TIMEZONE).date()
     for i in items:
         i["fields"].setdefault("Status", "Up next")
     active = [i for i in items if i["fields"]["Status"] in ACTIVE]
