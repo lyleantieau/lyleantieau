@@ -99,6 +99,13 @@ def who(fields):
     return " · ".join(v for v in (fields.get("Group"), fields.get("Requester")) if v)
 
 
+def status(fields):
+    """Status, plus what it's waiting on when blocked, e.g. "Waiting on Artemis: lens radius"."""
+    if fields["Status"] == "Waiting on others" and fields.get("Waiting on"):
+        return f"Waiting on {fields['Waiting on']}"
+    return fields["Status"]
+
+
 def timeline(fields, today):
     """Start → Target plus how long is left, e.g. "Oct 30 → Nov 6 · 7 days left"."""
     target = date(fields.get("Target"))
@@ -106,6 +113,8 @@ def timeline(fields, today):
         return "—"
     span = f"{short(fields['Start'])} → {short(fields['Target'])}" if fields.get("Start") else f"by {short(fields['Target'])}"
     days = (target - today).days
+    if fields["Status"] == "Waiting on others":
+        return f"{span} · on hold"  # blocked on someone else, so no countdown or overdue flag
     if days < 0:
         left = f"⚠️ {-days} day{'s' * (days != -1)} overdue"
     elif days == 0:
@@ -136,7 +145,7 @@ def deliverables_section():
     for n, i in enumerate(active, 1):
         f = i["fields"]
         lines.append(f"| {n} | {link(i)} | {cell(who(f))} | {cell(f.get('Priority'))} "
-                     f"| {f['Status']} | {timeline(f, today)} |")
+                     f"| {cell(status(f))} | {timeline(f, today)} |")
     if done:
         lines += ["", f"<details><summary>Done in the last {RECENT_DAYS} days ({len(done)})</summary>", "",
                   "| Deliverable | For |", "|---|---|"]
