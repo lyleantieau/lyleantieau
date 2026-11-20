@@ -10,9 +10,9 @@ Need something? Talk to me. See [how priorities are decided](https://github.com/
 
 | # | Deliverable | For | Priority | Status | Timeline |
 |---|---|---|---|---|---|
-| 1 | [Spot sensor & compute mounting](https://github.com/lyleantieau/deliverables/issues/5) | ARPG · Kali | High | In progress | by Nov 18 · ⚠️ 1 day overdue |
-| 2 | [Tool changer 48V passthrough](https://github.com/lyleantieau/deliverables/issues/11) | Correll · Zack | Medium | Up next | by Nov 13 · ⚠️ 6 days overdue |
-| 3 | [Nutrunner V2 PCB design](https://github.com/lyleantieau/deliverables/issues/9) | Correll · Zack | Medium | Up next | by Nov 30 · 11 days left |
+| 1 | [Spot sensor & compute mounting](https://github.com/lyleantieau/deliverables/issues/5) | ARPG · Kali | High | In progress | by Nov 18 · ⚠️ 2 days overdue |
+| 2 | [Tool changer 48V passthrough](https://github.com/lyleantieau/deliverables/issues/11) | Correll · Zack | Medium | Up next | by Nov 13 · ⚠️ 7 days overdue |
+| 3 | [Nutrunner V2 PCB design](https://github.com/lyleantieau/deliverables/issues/9) | Correll · Zack | Medium | Up next | by Nov 30 · 10 days left |
 | 4 | [Nutrunner V2 build](https://github.com/lyleantieau/deliverables/issues/12) | Correll · Zack | Medium | Up next | — |
 | 5 | [TouchIQ convex mold](https://github.com/lyleantieau/deliverables/issues/13) | Correll · Artemis | Medium | Waiting on Artemis: lens radius | by Nov 9 · on hold |
 
